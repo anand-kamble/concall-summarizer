@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
+import { BACKEND_URL } from "../../utils/constants";
 
 export interface ScreenerState {
   loading: boolean;
@@ -39,53 +41,14 @@ export const ScreenerSlice = createSlice({
 export const search = createAsyncThunk(
   "screener/search",
   async ({ query }: { query: string }, { rejectWithValue }) => {
-    return [
-      {
-        id: 2726,
-        name: "Reliance Industries Ltd",
-        url: "/company/RELIANCE/consolidated/",
-      },
-      {
-        id: 2809,
-        name: "REC Ltd",
-        url: "/company/RECLTD/consolidated/",
-      },
-      {
-        id: 1274649,
-        name: "Rail Vikas Nigam Ltd",
-        url: "/company/RVNL/",
-      },
-      {
-        id: 2620,
-        name: "Radico Khaitan Ltd",
-        url: "/company/RADICO/",
-      },
-      {
-        id: 2693,
-        name: "Ratnamani Metals & Tubes Ltd",
-        url: "/company/RATNAMANI/consolidated/",
-      },
-      {
-        id: 2662,
-        name: "Ramkrishna Forgings Ltd",
-        url: "/company/RKFORGE/consolidated/",
-      },
-      {
-        id: 2719,
-        name: "Relaxo Footwears Ltd",
-        url: "/company/RELAXO/",
-      },
-      {
-        id: 1284488,
-        name: "R R Kabel Ltd",
-        url: "/company/RRKABEL/",
-      },
-      {
-        id: null,
-        name: "Search everywhere: r",
-        url: "/full-text-search/?q=r",
-      },
-    ];
+    try {
+      const res = await axios.get(BACKEND_URL + "/search/" + query, {
+        data: { query: query },
+      });
+      return res.data;
+    } catch (error) {
+      rejectWithValue(error);
+    }
   }
 );
 
