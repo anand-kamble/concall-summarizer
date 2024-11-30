@@ -1,1 +1,5 @@
-python app.py
+watchmedo shell-command \
+    --patterns='*.py;*.txt' \
+    --recursive \
+    --command='python "app.py"' \
+    .
