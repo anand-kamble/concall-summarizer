@@ -1,20 +1,11 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 import requests
 from utils.CONSTANTS import SCREENER_BASE_URL
 
 router = APIRouter()
 
-@router.get("/search")
-async def search_company(query: str):
-    """
-    Searches for a company using the Screener API.
-
-    Parameters:
-    - query (str): The search query to look for companies.
-
-    Returns:
-    - JSON response from Screener API.
-    """
+@router.get("/search/{query}")
+async def search(query: str):
     url = f"{SCREENER_BASE_URL}?q={query}&v=3&fts=1"
     try:
         # Fetch data from the Screener API
