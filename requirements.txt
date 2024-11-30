@@ -1,3 +1,0 @@
-fastapi
-commitizen
-requests
