@@ -1,9 +1,6 @@
 from typing import Any
 from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
-from pyppeteer import launch
-from pyppeteer.browser import Browser
-from pyppeteer.page import Page
 import requests
 from bs4 import BeautifulSoup, BeautifulStoneSoup, ResultSet, Tag
 from utils.models import ScreenerSearchResult
