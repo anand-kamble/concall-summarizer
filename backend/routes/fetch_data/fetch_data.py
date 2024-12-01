@@ -17,6 +17,7 @@ class FindRequestType(BaseModel):
 async def find(req: FindRequestType):
 
     browser: Browser = await launch({'headless': False})
+
     page: Page = await browser.newPage()
     await page.goto("https://www.screener.in/" + req.selectedResult.url)
 
