@@ -9,7 +9,7 @@ import pkgutil
 
 app = FastAPI()
 
-
+# This is for the CORS middleware
 origins: list[str] = ["*"]
 app.add_middleware(
     CORSMiddleware,
