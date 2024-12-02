@@ -1,14 +1,15 @@
 {
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.renderWhitespace": "all",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.renderWhitespace": "none",
 
-    // Encoding
-    "files.encoding": "utf8",
+  // Encoding
+  "files.encoding": "utf8",
 
-    "[python]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4,
-    },
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true
+  }
 }
