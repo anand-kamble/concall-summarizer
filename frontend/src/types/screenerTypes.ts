@@ -3,3 +3,10 @@ export interface ScreenerSearchResult {
   name: string;
   url: string;
 }
+
+export interface FindPDFsReturnType {
+  extracted_data: {
+    date: string;
+    url: string;
+  }[];
+}
