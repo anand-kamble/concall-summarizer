@@ -1,0 +1,12 @@
+{
+    "files":[
+        {
+            "id": "1",
+            "name": "file1",
+            "path": "path1",
+            "url": "url1",
+            "screener_name": "screener1",
+            "month_year": "month_year1"
+        }
+    ]
+}
