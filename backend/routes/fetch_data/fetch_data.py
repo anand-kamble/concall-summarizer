@@ -36,9 +36,10 @@ async def find(req: FindRequestType):
             data.append(transcript_entry)
 
 
+
+
         return {"extracted_data": data}
     except Exception as e:
-
         raise HTTPException(400,f"Failed to parse the HTML page: {req.selectedResult.url}")
 
 
